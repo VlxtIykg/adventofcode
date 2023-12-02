@@ -1,3 +1,4 @@
+# This is my Python solution for part 2 of day 1 of AOC.
 import os
 from enum import Enum
 from typing import LiteralString
