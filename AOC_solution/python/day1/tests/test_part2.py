@@ -1,7 +1,5 @@
 import unittest
-import sys
-sys.path.append('./AOC_solution/python/day1/')
-from part2 import number_parsing_logic, get_number_from_enum  # noqa: E402
+from AOC_solution.python.day1.part2 import number_parsing_logic, get_number_from_enum  # noqa: E402
 
 
 class TestNumberParsingLogic(unittest.TestCase):
