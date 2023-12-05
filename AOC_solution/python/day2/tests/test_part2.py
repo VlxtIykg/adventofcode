@@ -1,8 +1,5 @@
 from AOC_solution.python.day2.part2 import separate_objects
 import unittest
-import sys
-sys.path.append('./AOC_solution/python/day2/')
-from part2 import separate_objects
 
 class TestSeparateObjects(unittest.TestCase):
     def test_separate_objects(self):
