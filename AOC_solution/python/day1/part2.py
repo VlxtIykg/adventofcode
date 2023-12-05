@@ -9,15 +9,64 @@ if file_path is None:
     file_path = "/home/.../adventofcode/resources/day1.txt" # Example, replace ... with actual path, check using pwd
 
 class Numbers(Enum):
-  one = "1"
-  two = "2"
-  three = "3"
-  four = "4"
-  five = "5"
-  six = "6"
-  seven = "7"
-  eight = "8"
-  nine = "9"
+    """
+    An enumeration of numbers for indexing purposes.
+
+    Accessible as follows:
+
+    - attribute access:
+
+      >>> Numbers.one
+      <Numbers.one: '1'>
+
+    - value lookup:
+
+      >>> Numbers("1")
+      <Numbers.one: '1'>
+
+    - inheritance:
+      
+      >>> Numbers.mro()
+      [<enum 'Numbers'>, <enum 'Enum'>, <class 'object'>] # Idk why u need this but it's cool
+
+    Indexing:
+
+    Most efficient:
+      >>> for i in Numbers:
+      >>>   print(i.name)
+      "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
+      >>>        print(i.value)
+      1, 2, 3, 4, 5, 6, 7, 8, 9
+    Managable:
+      >>> for i in list(Numbers):
+      >>>   print(i.name) 
+      "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
+      >>>        print(i.value)
+      1, 2, 3, 4, 5, 6, 7, 8, 9
+    Brute force from length of enumeration:
+      >>> for i in range(1, len(Numbers) + 1):
+      >>>   print(Numbers(str(i)).name) # one, two, three, four, five, six, seven, eight, nine
+      # 
+      # or            
+      # 
+      >>> for i in range(len(Numbers)):
+      >>>   if i == 4 and "four" == Numbers.four.name and "4" == Numbers.four.value:
+      >>>     print(Numbers.four.name)
+      "four"
+      >>>     print(Numbers.four.value)
+      4
+
+
+    """
+    one = "1"
+    two = "2"
+    three = "3"
+    four = "4"
+    five = "5"
+    six = "6"
+    seven = "7"
+    eight = "8"
+    nine = "9"
 
 def get_number_from_enum(string: str) -> LiteralString:
   """
