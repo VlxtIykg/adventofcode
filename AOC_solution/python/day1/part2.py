@@ -91,26 +91,31 @@ def get_number_from_enum(string: str) -> LiteralString:
             temp.append(key.value)
     return "".join(temp)
 
+
 def number_parsing_logic(string: str) -> LiteralString:
-  """
-  Parses a string and replaces characters with corresponding numbers based on an enumeration.
+    """
+    Parses a string and replaces characters with corresponding numbers based on an enumeration.
 
-  Args:
-    string (str): The input string to be parsed.
+    Args:
+      string (str): The input string to be parsed.
 
-  Returns:
-    LiteralString: A list of numbers joined as a string.
-  """
-  temp = []
-  tempchar = ""
-  for idx, item in enumerate(string):
-    if item.isdigit():
-      temp.append(item)
-    else:
-      tempchar = tempchar + item
-      number = get_number_from_enum(string[idx:])
-      temp.append(number)
-  return "".join(temp)
+    Returns:
+      LiteralString: A list of numbers joined as a string.
+    
+    >>> number = number_parsing_logic("one two three four five six seven eight nine")
+    >>> print(number)
+    123456789
+    """
+    temp = []
+    tempchar = ""
+    for idx, item in enumerate(string):
+        if item.isdigit():
+            temp.append(item)
+        else:
+            tempchar = tempchar + item
+            number = get_number_from_enum(string[idx:])
+            temp.append(number)
+    return "".join(temp)
 
 def get_required_number(string: str | int | None):
   """
