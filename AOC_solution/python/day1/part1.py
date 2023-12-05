@@ -5,8 +5,7 @@ import os
 
 file_path = os.getenv("day1textfile")
 
-
-def get_first_and_last_numbers(string) -> tuple[int, int]:
+def get_first_and_last_numbers(string) -> tuple[int, int] | int:
     numbers = re.findall(pattern=r'\d+', string=string)
     compacted_numbers = "".join(numbers)
     if not compacted_numbers:
