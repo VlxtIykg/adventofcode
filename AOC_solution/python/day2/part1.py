@@ -1,7 +1,6 @@
 # This is my Python solution for part 1 of day 2 of AOC.
 import os
 from typing import Dict
-import setup
 from icecream import ic
 
 file_path = os.getenv("day2textfile") # If you don't have a conda environment or didn't set up the .env file, you can just replace this with the path to the text file.
@@ -46,7 +45,6 @@ def separate_objects(games: list[str]) -> int:
         if add_game:
             gameID = int(temp_["game"].split(" ")[1])
             outer_temp_["total_games"] += gameID
-    ic(outer_temp_["total_games"])
     return outer_temp_["total_games"]
 
 
