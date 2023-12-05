@@ -117,18 +117,23 @@ def number_parsing_logic(string: str) -> LiteralString:
             temp.append(number)
     return "".join(temp)
 
-def get_required_number(string: str | int | None):
-  """
-  Calculates the sum of the first and last characters of the given string.
 
-  Args:
-    string (str | int | None): The input string.
+def get_required_number(string: str):
+    """
+    Calculates the sum of the first and last characters of the given string.
 
-  Returns:
-    The concatenation of the first and last characters of the string.
-  """
-  total = string[0] + string[-1]
-  return total
+    Args:
+      string (str | int | None): The input string.
+
+    Returns:
+      The concatenation of the first and last characters of the string.
+
+    >>> number = get_required_number("123456789")
+    >>> print(number)
+    19
+    """
+    total = string[0] + string[-1]
+    return total
 
 def calculate_total():
   """
