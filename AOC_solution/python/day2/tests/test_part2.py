@@ -1,3 +1,4 @@
+from AOC_solution.python.day2.part2 import separate_objects
 import unittest
 import sys
 sys.path.append('./AOC_solution/python/day2/')
