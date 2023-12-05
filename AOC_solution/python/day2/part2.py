@@ -1,12 +1,13 @@
 # This is my Python solution for part 2 of day 2 of AOC.
 import os
 import re
-import setup
 from icecream import ic
 from functools import reduce
 import operator
 
-file_path = os.getenv("day2textfile")
+file_path = os.getenv("day2textfile") # If you don't have a conda environment or didn't set up the .env file, you can just replace this with the path to the text file.
+if file_path is None:
+    file_path = "/home/.../adventofcode/resources/day1.txt" # Example, replace ... with actual path, check using pwd
 
 
 def separate_objects(games: list[str]) -> int:
