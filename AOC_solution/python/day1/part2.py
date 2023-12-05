@@ -68,21 +68,28 @@ class Numbers(Enum):
     eight = "8"
     nine = "9"
 
+
 def get_number_from_enum(string: str) -> LiteralString:
-  """
-  Returns a string representation of the numbers associated with the given string.
+    """
+    Returns a string representation of the numbers associated with the given string.
 
-  Args:
-    string (str): The input string.
+    Args:
+      string (str): The string form of the numeric number.
 
-  Returns:
-    LiteralString: A string representation of the numbers associated with the input string.
-  """
-  temp = []
-  for key in Numbers:
-    if string.startswith(key.name):
-      temp.append(key.value)
-  return "".join(temp)
+    Returns:
+      LiteralString: A string representation of the numbers associated with the input string.
+
+    Example:
+      
+    >>> number = get_number_from_enum("nine")
+    >>> print(number)
+    9
+    """
+    temp = []
+    for key in Numbers:
+        if string.startswith(key.name):
+            temp.append(key.value)
+    return "".join(temp)
 
 def number_parsing_logic(string: str) -> LiteralString:
   """
