@@ -43,7 +43,6 @@ def separate_objects(games: list[str]) -> int:
                         continue
         if add_game:
             gameID = int(temp_["game"].split(" ")[1])
-            ic(gameID)
             outer_temp_["total_games"] += gameID
     ic(outer_temp_["total_games"])
     return outer_temp_["total_games"]
