@@ -1,7 +1,6 @@
 # This is my Python solution for part 1 of day 1 of AOC.
 from icecream import ic
 import re
-import setup   # noqa: F401
 import os
 
 file_path = os.getenv("day1textfile")
