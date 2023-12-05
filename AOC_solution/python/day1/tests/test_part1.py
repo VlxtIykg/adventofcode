@@ -1,6 +1,7 @@
 from AOC_solution.python.day1.part1 import get_first_and_last_numbers
 import unittest
 
+
 class TestGetFirstAndLastNumbers(unittest.TestCase):
     def test_get_first_and_last_numbers(self):
         """ Test case 1: string with single digit numbers """

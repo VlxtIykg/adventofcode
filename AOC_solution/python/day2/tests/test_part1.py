@@ -1,6 +1,7 @@
 from AOC_solution.python.day2.part1 import separate_objects
 import unittest
 
+
 class TestSeparateObjects(unittest.TestCase):
     def test_separate_objects_p1(self):
         # Test case 1: single game with valid colors

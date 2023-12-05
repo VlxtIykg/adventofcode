@@ -4,9 +4,13 @@ from enum import Enum
 from typing import LiteralString
 from icecream import ic
 
-file_path = os.getenv("day1textfile") # If you don't have a conda environment or didn't set up the .env file, you can just replace this with the path to the text file.
+# If you don't have a conda environment or didn't set up the .env file,
+# you can just replace this with the path to the text file.
+file_path = os.getenv("day1textfile")
 if file_path is None:
-    file_path = "/home/.../adventofcode/resources/day1.txt" # Example, replace ... with actual path, check using pwd
+    # Example, replace ... with actual path, check using pwd
+    file_path = "/home/.../adventofcode/resources/day1.txt"
+
 
 class Numbers(Enum):
     """
@@ -25,7 +29,7 @@ class Numbers(Enum):
       <Numbers.one: '1'>
 
     - inheritance:
-      
+
       >>> Numbers.mro()
       [<enum 'Numbers'>, <enum 'Enum'>, <class 'object'>] # Idk why u need this but it's cool
 
@@ -39,16 +43,16 @@ class Numbers(Enum):
       1, 2, 3, 4, 5, 6, 7, 8, 9
     Managable:
       >>> for i in list(Numbers):
-      >>>   print(i.name) 
+      >>>   print(i.name)
       "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
       >>>        print(i.value)
       1, 2, 3, 4, 5, 6, 7, 8, 9
     Brute force from length of enumeration:
       >>> for i in range(1, len(Numbers) + 1):
       >>>   print(Numbers(str(i)).name) # one, two, three, four, five, six, seven, eight, nine
-      # 
-      # or            
-      # 
+      #
+      # or
+      #
       >>> for i in range(len(Numbers)):
       >>>   if i == 4 and "four" == Numbers.four.name and "4" == Numbers.four.value:
       >>>     print(Numbers.four.name)
@@ -80,7 +84,7 @@ def get_number_from_enum(string: str) -> LiteralString:
       LiteralString: A string representation of the numbers associated with the input string.
 
     Example:
-      
+
     >>> number = get_number_from_enum("nine")
     >>> print(number)
     9
@@ -101,7 +105,7 @@ def number_parsing_logic(string: str) -> LiteralString:
 
     Returns:
       LiteralString: A list of numbers joined as a string.
-    
+
     >>> number = number_parsing_logic("one two three four five six seven eight nine")
     >>> print(number)
     123456789

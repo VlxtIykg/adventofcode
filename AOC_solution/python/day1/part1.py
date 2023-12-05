@@ -3,9 +3,13 @@ from icecream import ic
 import re
 import os
 
-file_path = os.getenv("day1textfile") # If you don't have a conda environment or didn't set up the .env file, you can just replace this with the path to the text file.
+# If you don't have a conda environment or didn't set up the .env file,
+# you can just replace this with the path to the text file.
+file_path = os.getenv("day1textfile")
 if file_path is None:
-    file_path = "/home/.../adventofcode/resources/day1.txt" # Example, replace ... with actual path, check using pwd
+    # Example, replace ... with actual path, check using pwd
+    file_path = "/home/.../adventofcode/resources/day1.txt"
+
 
 def get_first_and_last_numbers(string) -> tuple[int, int] | int:
     numbers = re.findall(pattern=r'\d+', string=string)
