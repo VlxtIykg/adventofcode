@@ -1,8 +1,5 @@
+from AOC_solution.python.day1.part1 import get_first_and_last_numbers
 import unittest
-import sys
-sys.path.append('./AOC_solution/python/day1/')
-from part1 import get_first_and_last_numbers  # noqa: E402
-
 
 class TestGetFirstAndLastNumbers(unittest.TestCase):
     def test_get_first_and_last_numbers(self):
