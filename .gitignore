@@ -160,3 +160,9 @@ cython_debug/
 #.idea/
 
 .vscode
+
+# Other languages
+# Temporarily remove other languages until started
+# Languages includes js, java
+AOC_solution/java/*
+AOC_solution/javascript/*
