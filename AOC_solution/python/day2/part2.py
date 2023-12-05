@@ -1,3 +1,4 @@
+# This is my Python solution for part 2 of day 2 of AOC.
 import os
 import re
 import setup
@@ -7,15 +8,17 @@ import operator
 
 file_path = os.getenv("day2textfile")
 
+
 def separate_objects(games: list[str]) -> int:
     total = 0
     for game in games:
         biggest_set = {"red": 0, "green": 0, "blue": 0}
-        
+
         for sets in game.split(":"):
             if sets.startswith("Game"):
                 continue
-            # Convert semicolon to comma so that we can split on comma to have 1 string to loop through 
+            # Convert semicolon to comma so that we can split on comma to have
+            # 1 string to loop through
             sets = re.sub(";", ",", sets)
             # Remove trailing white spaces
             sets = sets.strip()
@@ -44,7 +47,7 @@ def separate_objects(games: list[str]) -> int:
                     biggest_set["red"] = number
                     pass
                 pass
-        
+
         # Add the biggest set to the total, separate stmt for readability
         result = reduce(operator.mul, biggest_set.values(), 1)
         total += result
@@ -66,6 +69,7 @@ def main():
     data = get_data()
     mnm_set = separate_objects(data)
     ic(mnm_set)
+
 
 if __name__ == "__main__":
     main()
