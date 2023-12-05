@@ -155,5 +155,6 @@ def calculate_total():
             total += int(get_required_number(text))
         ic(total)
 
+
 if __name__ == "__main__":
-  calculate_total()
+    calculate_total()
