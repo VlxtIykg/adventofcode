@@ -135,20 +135,25 @@ def get_required_number(string: str):
     total = string[0] + string[-1]
     return total
 
-def calculate_total():
-  """
-  Calculates the total by reading numbers from a file and applying number parsing logic.
 
-  Returns:
-    The calculated total.
-  """
-  with open(file_path, "r") as file:
-    lines = file.readlines()
-    total = 0
-    for line in lines:
-      text = number_parsing_logic(line)
-      total += int(get_required_number(text))
-    ic(total)
+def calculate_total():
+    """
+    Calculates the total by reading numbers from a file and applying number parsing logic.
+
+    Returns:
+      The calculated total.
+
+    >>> total = calculate_total()
+    >>> print(total)
+    56324
+    """
+    with open(file_path, "r") as file:
+        lines = file.readlines()
+        total = 0
+        for line in lines:
+            text = number_parsing_logic(line)
+            total += int(get_required_number(text))
+        ic(total)
 
 if __name__ == "__main__":
   calculate_total()
